@@ -1,0 +1,28 @@
+# include <iostream>
+using namespace std;
+
+int sumArray(int *arr, int size){
+    //base case
+    if(size == 0){
+        return 0;
+    }
+    if (size == 1){
+        return arr[0];
+    }
+    else {
+    int remainingpart  =  sumArray(arr + 1 , size - 1 );
+    int sum = arr[0] + remainingpart;
+    return sum;
+    }
+}
+
+int main(){
+
+    int arr[6] = { 1,2,0,4,5};
+    int size = 6;
+    
+    int sum = sumArray(arr , 6);
+    cout << sum <<  endl;
+
+
+} 
